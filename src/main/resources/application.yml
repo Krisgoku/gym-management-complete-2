@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fithub
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-specific-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+jwt:
+  secret: your-256-bit-secret-key-here
+  expiration: 86400000 # 24 hours in milliseconds
+
+twilio:
+  account-sid: your-account-sid
+  auth-token: your-auth-token
+  whatsapp-number: +14155238886 # Your Twilio WhatsApp number
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.fithub: DEBUG
